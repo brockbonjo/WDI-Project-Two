@@ -10,7 +10,7 @@ var destinationSchema = new Schema({
 
 
 var citySchema = new Schema({
-    loaction: String,
+    location: String,
     imgs: [],
     destination: [destinationSchema],
 });
