@@ -3,13 +3,15 @@ var User = require('../models/user');
 
 module.exports = {
     new: newCity,
-    show
+    show,
 }
+
 
 function newCity(req, res) {
     City.find({}, function (err, cities) {
         // console.log(cities)
         res.render('cities/new', {
+            user: req.user,
             title: 'Add City',
             cities
         });

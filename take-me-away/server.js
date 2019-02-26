@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
 
+
 require('dotenv').config();
 
 var app = express();
@@ -16,6 +17,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var citiesRouter = require('./routes/cities');
+var destinationsRouter = require('./routes/destinations')
 
 
 
@@ -39,6 +41,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cities', citiesRouter);
+app.use('/', destinationsRouter)
 
 
 // catch 404 and forward to error handler

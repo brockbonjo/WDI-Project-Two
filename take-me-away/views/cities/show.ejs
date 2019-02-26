@@ -7,11 +7,10 @@
 </head>
 
 <body>
-    <nav>
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="" class="brand-logo left">Take Me Away</a>
+                    <a href="/users" class="brand-logo left">Take Me Away</a>
                     <ul class="right">
                         <li>
                             <% if (user) { %>
@@ -26,7 +25,17 @@
         </div>
         <section id="show-page">
             <h1><%= city.location %></h1>
-            <div> <img src="<%= city.imgs %>"> </div>
+
+<form id="add-destination-form" method="POST" action="/cities/<%= city._id %>/destinations">
+            <input type="text" name="images">
+            <input type="submit" value="Add Photo">
+            <% if (city.destination.length) { %>
+                <% city.destination.forEach(function(d) { %>
+            <div> <img src="<%= d.images %>"> </div>
+            <% }); %>
+            <%  } else { %>
+            <h2>Add A Photo</h2>
+            <% } %>
         </section>
 <a href="/users">Go Home</a>
 </body>

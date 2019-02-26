@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var destinationSchema = new Schema({
+    images: [],
     //click an image an update its exact location
     attraction: String,
     // add any additional info about the city eg fav restaurants
@@ -11,7 +12,6 @@ var destinationSchema = new Schema({
 
 var citySchema = new Schema({
     location: String,
-    imgs: [],
     destination: [destinationSchema],
 });
 
