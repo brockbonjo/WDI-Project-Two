@@ -8,35 +8,17 @@ module.exports = {
 
 }
 
+
 function index(req, res, next) {
-    // console.log(req.user);
-    req.user.populate("cities", function (err, user) {
-        console.log(req.user.cities)
-        req.user.cities.forEach(function(city){
-            city.populate('destination', function (err, city){
-                console.log(req.user.cities[0])
-                console.log(req.user);
-                res.render('users', {
-                    user: req.user,
-                    city
-                    // name: req.query.name,
-                });
-        });
-
+    req.user.
+        populate({
+            path: 'cities',
+            populate: { path: 'destination' }
+        }, function (err, result) {
+            res.render('users', {
+                user: result
+            })
         })
-
-        // City.findById(req.params.id, function (err, city) {
-        //     console.log(req.params.id)
-        //     city.populate("destination", function (err, c) {
-
-        //         // console.log(req.param.id)
-        //         // City.find({ destination: destination._id }, function (err, city) {
-        //             res.render('users', {
-        //                 user: req.user, city, c
-        //             })
-        //     })
-        // })
-    });
 
 };
 

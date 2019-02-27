@@ -2,7 +2,8 @@ var City = require('../models/city');
 var Destination = require('../models/destination');
 
 module.exports = {
-    create
+    create,
+    deleteDestination
 };
 
 function create(req, res) {
@@ -14,6 +15,13 @@ function create(req, res) {
                 res.redirect(`/cities/${city._id}`);
             });
         })
+    });
+};
+
+function deleteDestination(req, res){
+    Destination.findByIdAndRemove(req.params.id, function(err, destination){
+        console.log('hitting')
+        res.redirect(`/cities/${req.params.idc}`);
     });
 };
 

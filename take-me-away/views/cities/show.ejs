@@ -36,6 +36,10 @@
             <% city.destination.forEach(function(d) { %>
             <div> <img src="<%= d.images %>"> </div>
             <div> <%= d.info %> </div>
+            <form id="delete-destination-form" method="POST" action="/cities/<%= city._id %>/destinations/<%= d._id %>?_method=DELETE">
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit">Delete</button>
+            </form>
             <% }); %>
             <%  } else { %>
             <h2>Share Your Adventure!</h2>

@@ -25,14 +25,14 @@
     </div>
 
     <table>
-        <% user.cities.forEach(function(city){ %>
+        <%  user.cities.forEach(function(city){  %>
         <thead>
             <tr>
                 <th><a href="/cities/<%=city._id %>"><%= city.location %></a></th>
             </tr>
         </thead>
+        <% city.destination.splice(0,3).forEach(function(d) { %>
         <tbody>
-            <% city.destination.forEach(function(d) { %>
             <tr>
                 <td><img src="<%= d.images %>"></td>
             </tr>
