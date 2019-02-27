@@ -7,35 +7,41 @@
 </head>
 
 <body>
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="/users" class="brand-logo left">Take Me Away</a>
-                    <ul class="right">
-                        <li>
-                            <% if (user) { %>
-                            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                            <% } else { %>
-                            <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                            <% } %>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-        <section id="show-page">
-            <h1><%= city.location %></h1>
-
-<form id="add-destination-form" method="POST" action="/cities/<%= city._id %>/destinations">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="/users" class="brand-logo left">Take Me Away</a>
+                <ul class="right">
+                    <li>
+                        <% if (user) { %>
+                        <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                        <% } else { %>
+                        <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                        <% } %>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <section id="show-page">
+        <h1><%= city.location %></h1>
+        <form id="add-destination-form" method="POST" action="/cities/<%= city._id %>/destinations">
+            <label>ADD PHOTO</label>
             <input type="text" name="images">
-            <input type="submit" value="Add Photo">
+            <label>ADD CAPTION</label>
+            <input type="text" name="info"></input>
+            <input type="submit" value="Add Attraction">
+        </form>
             <% if (city.destination.length) { %>
-                <% city.destination.forEach(function(d) { %>
+            <% city.destination.forEach(function(d) { %>
             <div> <img src="<%= d.images %>"> </div>
+            <div> <%= d.info %> </div>
             <% }); %>
             <%  } else { %>
-            <h2>Add A Photo</h2>
+            <h2>Share Your Adventure!</h2>
             <% } %>
-        </section>
-<a href="/users">Go Home</a>
+
+
+    </section>
+    <a href="/users">Go Home</a>
 </body>
