@@ -2,8 +2,7 @@
 <section id="show-page">
     <div class="container">
         <form id="update-location-form" method="POST" action="/cities/<%= city._id %>?_method=PUT">
-            <label>New Location Name</label>
-            <input type="text" name="location">
+            <input placeholder="<%= city.location %>" type="text" name="location">
             <input type="submit" value="Update Location">
         </form>
         <h1><%= city.location %></h1>
@@ -16,13 +15,12 @@
         </form>
         <% if (city.destination.length) { %>
         <% city.destination.forEach(function(d) { %>
-        <img style="width: 400px" src="<%= d.images %>">
-        <div> <%= d.info %> </div>
-        <form id="delete-destination-form" method="POST"
-            action="/cities/<%= city._id %>/destinations/<%= d._id %>?_method=DELETE">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit">Delete</button>
-        </form>
+                <img class="center-align" style="width: 400px" src="<%= d.images %>">
+                <div> <%= d.info %> </div>
+                <form id="delete-destination-form" method="POST" action="/cities/<%= city._id %>/destinations/<%= d._id %>?_method=DELETE">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit">Delete</button>
+                </form>
         <% }); %>
         <%  } else { %>
         <h2>Share Your Adventure!</h2>
