@@ -30,7 +30,7 @@
                 <%  user.cities.forEach(function(city){  %>
                 <div class="row">
                     <div class="col s12">
-                        <h5><a href="/cities/<%=city._id %>"><%= city.location %></a></h5>
+                        <h5><a class="cyan-text text-darken-3" href="/cities/<%=city._id %>"><%= city.location %></a></h5>
                     </div>
                     <% city.destination.slice(0,3).forEach(function(d) { %>
                         <% if(city.destination.length == 1) { %>
@@ -43,8 +43,8 @@
                         <img class="center-align" style="width:250px;" src="<%= d.images %>">
                     </div>
                         <% } %>
-                        <% if(city.destination.length == 3) { %>
-                    <div class="col s12 m6 l4">
+                        <% if(city.destination.length >= 3) { %>
+                    <div class="col s12 m4 l4">
                         <img class="center-align" style="width:250px;" src="<%= d.images %>">
                     </div>
                         <% } %>

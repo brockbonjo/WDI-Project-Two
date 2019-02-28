@@ -1,31 +1,51 @@
 <%- include('../partials/header') %>
 <section id="show-page">
     <div class="container">
-        <form id="update-location-form" method="POST" action="/cities/<%= city._id %>?_method=PUT">
-            <input placeholder="<%= city.location %>" type="text" name="location">
-            <input type="submit" value="Update Location">
-        </form>
         <h1><%= city.location %></h1>
-        <form id="add-destination-form" method="POST" action="/cities/<%= city._id %>/destinations">
-            <label>ADD PHOTO</label>
-            <input type="text" name="images">
-            <label>ADD CAPTION</label>
-            <input type="text" name="info"></input>
-            <input type="submit" value="Add Attraction">
-        </form>
         <% if (city.destination.length) { %>
-        <% city.destination.forEach(function(d) { %>
-                <img class="center-align" style="width: 400px" src="<%= d.images %>">
+        <% city.destination.forEach(function(d, index) { %>
+        <% if (index % 2 === 0){ %>
+        <!-- Open div class="row" only on even items (every 2) -->
+        <div class="row">
+            <% } %>
+            <div class="col s12 m6 l6 center-align">
+                <img style="width: 300px" src="<%= d.images %>">
                 <div> <%= d.info %> </div>
-                <form id="delete-destination-form" method="POST" action="/cities/<%= city._id %>/destinations/<%= d._id %>?_method=DELETE">
-                    <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit">Delete</button>
+                <form id="delete-destination-form" method="POST"
+                    action="/cities/<%= city._id %>/destinations/<%= d._id %>?_method=DELETE">
+                    <button class="btn-small waves-effect waves-light cyan darken-3" type="submit">Delete</button>
                 </form>
-        <% }); %>
-        <%  } else { %>
-        <h2>Share Your Adventure!</h2>
+            </div>
+            <% if (index % 2 === 1){ %>
+            <!-- Close div class="row" only on odd items (every 2) -->
+        </div>
         <% } %>
-        <a href="/users">Go Home</a>
+
+        <% }); %>
+        <% if (city.destination.length % 2 === 1){ %>
+        <!-- Close div class="row" if items array is odd # -->
+    </div>
+    <% } %>
+    <%  } else { %>
+    <h2>Share Your Adventure!</h2>
+    <% } %>
+    <form id="add-destination-form" method="POST" action="/cities/<%= city._id %>/destinations">
+        <label>ADD PHOTO</label>
+        <input type="text" name="images">
+        <label>ADD CAPTION</label>
+        <input type="text" name="info"></input>
+        <button class="btn waves-effect waves-light cyan darken-3" type="submit" name="action">Add Attraction
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+    <br>
+    <form id="update-location-form" method="POST" action="/cities/<%= city._id %>?_method=PUT">
+        <input placeholder="<%= city.location %>" type="text" name="location">
+        <button class="waves-effect waves-light btn-small cyan darken-3" type="submit">Update Location</button>
+    </form>
+    <br>
+    <br>
+    <a class="waves-effect waves-light btn cyan darken-3" href="/users">Go Home</a>
     </div>
 </section>
 <%- include('../partials/footer') %>

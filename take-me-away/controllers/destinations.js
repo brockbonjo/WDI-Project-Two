@@ -6,6 +6,8 @@ module.exports = {
     deleteDestination
 };
 
+
+
 function create(req, res) {
     City.findById(req.params.id, function(err, city){
     Destination.create(req.body)

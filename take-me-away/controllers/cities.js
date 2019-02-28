@@ -8,7 +8,6 @@ module.exports = {
 }
 
 function update(req, res){
-    console.log('right function')
     City.findByIdAndUpdate(req.params.id,{location: req.body.location}, function(err, city){
         city.save(function(err){
         res.redirect('/users')
