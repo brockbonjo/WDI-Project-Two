@@ -4,7 +4,17 @@ var User = require('../models/user');
 module.exports = {
     new: newCity,
     show,
+    update
 }
+
+function update(req, res){
+    console.log('right function')
+    City.findByIdAndUpdate(req.params.id,{location: req.body.location}, function(err, city){
+        city.save(function(err){
+        res.redirect('/users')
+        })
+    });
+};
 
 
 function newCity(req, res) {
@@ -24,3 +34,4 @@ function show(req, res){
         })
     })
 }
+

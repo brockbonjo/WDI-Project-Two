@@ -1,29 +1,9 @@
-<!DOCTYPE html>
-<html>
+<%- include('../partials/header') %>
 
-<head>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
- <div class="navbar-fixed">
-    <nav>
-        <div class="nav-wrapper">
-            <a href="/users" class="brand-logo left">Take Me Away</a>
-            <ul class="right">
-                <li>
-                    <% if (user) { %>
-                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                    <% } else { %>
-                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                    <% } %>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</div>
-<p>Please first ensure that the City is not in the dropdown
-        <select>
+<section id="new-city-page">
+  <div class="container">
+<p>Please first ensure that the Location is not in the dropdown
+        <select class="browser-default">
           <% cities.forEach(function(c) { %>
             <option><%= c.location %></option>
           <% }) %>
@@ -33,6 +13,8 @@
       <form id="add-city-form" action="/users" method="POST">
         <label>Location:</label>
         <input type="text" name="location">
-        <input type="submit" value="Add City">
+        <input type="submit" value="Add Location">
       </form>
-    </body>
+    </div>
+    </section>
+  <%- include('../partials/footer') %>
