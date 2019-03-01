@@ -2,18 +2,17 @@
 
 <section id="new-city-page">
   <div class="container">
-<p>Please first ensure that the Location is not in the dropdown
+<p style="font-size: 20px">Please first ensure that the Location is not in the dropdown</p>
         <select class="browser-default">
           <% cities.forEach(function(c) { %>
             <option><%= c.location %></option>
           <% }) %>
         </select>
-      </p>
 
       <form id="add-city-form" action="/users" method="POST">
         <label>Location:</label>
         <input type="text" name="location">
-        <input type="submit" value="Add Location">
+        <button class="btn-small waves-effect waves-light cyan darken-3">Add Location</button>
       </form>
     </div>
     </section>

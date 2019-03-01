@@ -1,7 +1,41 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Neuton', serif !important;
+  color: white !important;
+  background-color: #00acc1;
+}
+
+label {
+  color: white;
+  font-size: 18px;
 }
 
 a {
-  color: #00838f;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.slider .indicators .indicator-item {
+  background-color: #666666;
+  border: 3px solid #ffffff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.slider .indicators .indicator-item.active {
+  background-color: #ffffff;
+}
+.slider-adjustment {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color:#00838f ;
+}
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
 }

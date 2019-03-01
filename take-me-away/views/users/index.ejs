@@ -3,9 +3,10 @@
 
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Neuton:700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="../../public/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
@@ -30,7 +31,7 @@
                 <%  user.cities.forEach(function(city){  %>
                 <div class="row">
                     <div class="col s12">
-                        <h5><a class="cyan-text text-darken-3" href="/cities/<%=city._id %>"><%= city.location %></a></h5>
+                        <h5><a href="/cities/<%=city._id %>"><%= city.location %></a></h5>
                     </div>
                     <% city.destination.slice(0,3).forEach(function(d) { %>
                         <% if(city.destination.length == 1) { %>
