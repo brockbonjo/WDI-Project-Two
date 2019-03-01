@@ -16,14 +16,13 @@ Take Me Away is a site to solve your wanderlust problems.
 [Trello](https://trello.com/b/8CHBVCsX/wdi-project-two)
 
 ### Technologies Used:
-* Java Script
-* HTML
-* CSS
+* JavaScript/HTML?CSS
 * MongoDB
 * Mongoose 
 * EJS
 * Express
 * Heroku
+* Node.JS
 
 Biggest hurdel was having to embed populate.
 Was not able to implement the comment model or search function as previously planned.
