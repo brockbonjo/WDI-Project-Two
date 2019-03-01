@@ -16,7 +16,7 @@ Take Me Away is a site to solve your wanderlust problems.
 [Trello](https://trello.com/b/8CHBVCsX/wdi-project-two)
 
 ### Technologies Used:
-* JavaScript/HTML?CSS
+* JavaScript/HTML/CSS
 * MongoDB
 * Mongoose 
 * EJS
