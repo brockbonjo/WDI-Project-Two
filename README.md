@@ -1,4 +1,4 @@
-#Take Me Away
+# Take Me Away
 
 Ever find yourself at work daydreaming about your last vacation? 
 
@@ -10,12 +10,12 @@ Take Me Away is a site to solve your wanderlust problems.
 ![Imgur](https://i.imgur.com/AGoGBLt.png)
 ![Imgur](https://i.imgur.com/iYkeZe8.png)
 
-###Links
+### Links
 [Take Me Away](https://take-meaway.herokuapp.com/)
 
 [Trello](https://trello.com/b/8CHBVCsX/wdi-project-two)
 
-###Technologies Used:
+### Technologies Used:
 * Java Script
 * HTML
 * CSS
@@ -28,7 +28,7 @@ Take Me Away is a site to solve your wanderlust problems.
 Biggest hurdel was having to embed populate.
 Was not able to implement the comment model or search function as previously planned.
 
-###Ice Box:
+### Ice Box:
 * Search function
 * Abbility to add comments
 * Add a map displaying the destination locations
