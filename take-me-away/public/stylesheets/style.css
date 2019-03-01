@@ -8,12 +8,32 @@ label {
   color: white;
   font-size: 18px;
 }
+#user-home-page{
+  border: 6px solid white;
+  padding: 10px;
+}
+#show-page{
+  border: 6px solid white;
+  padding: 10px;
+}
+
+#new-city-page{
+  border: 6px solid white;
+  padding: 10px;
+}
 
 a {
   text-decoration: none;
   color: white;
 }
 
+#user-home-page img{
+  border: 6px solid white;
+}
+
+#show-page img {
+  border: 6px solid white;
+}
 
 
 .slider .indicators .indicator-item {
